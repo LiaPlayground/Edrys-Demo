@@ -112,7 +112,7 @@ Stellen sie sich vor, sie hätten ein Arbeitsblatt und ein Experiment, das sie m
 
 ## Demo: SUUpoRT Urkraine
 
-
+![](/media/ukarine.jpeg)
 
 ## Demo: Analog-Digital-Wandler
 
@@ -120,90 +120,16 @@ Ein weiterer Vorteil von edrys-Lite ist die Möglichkeit, mehrere Experimente pa
 
 Die Studierenden setzen eine Anwendung um, die zwei existierende Klassen für die Verwendung von peripheren Bauteilen - Ultraschallsensor und LCD-Display - um. Im Ergebnis steht eine Applikation die kontinuierlich die Distanz zu einem Hindernis vermisst. Die Daten werden zudem über die Serielle Schnittstelle ausgegeben und analysiert.
 
+https://edrys-labs.github.io/?/classroom/1Sjgqpq8CaIKAsJh
 
-## Neuerungen in edrys-Lite
+## Andere Anwendungsbeispiele
 
-1. Internationalisierung: Die Benutzeroberfläche von edrys-Lite ist nun in mehreren Sprachen verfügbar. Die Sprache kann in den Einstellungen des Browsers geändert werden.
+![](/media/ChemischeAnlage.jpg)
 
-   ![Screenshot der Sprachauswahl](media/i18n.jpg)
 
-2. Verbesserte Nutzereinstellungen:
+## Wie geht es weiter?
 
-   - Es können zusätzlich Lehrer angelegt werden, die Kursinhalte verändern können.
-   - Es kann eine Liste von Studenten mit zugriff auf ein Experiment angelegt werden, alle anderen gelten dann als Zuschauer.
+> __Interaktive Projektdokumentation__ https://liascript.github.io/course/?https://raw.githubusercontent.com/edrys-labs/documentation/refs/heads/main/README.md
 
-   ![Screenshot der Nutzereinstellungen](media/members.png)
+!?[YouTube: Presentation](https://www.youtube.com/watch?v=Uv79Y8EhBVw)
 
-3. Dauerhafte und sichere Kommunikation:
-
-   - Signaling und TURN Server werden jetzt in der TU Freiberg betrieben.
-   - Verlust von Verbindungen wird jetzt mit Logical Clocks durchgeführt, mehr sicherheit bei Zeit und Datumsunterschieden.
-  
-4. Vollständige API:
-
-   1. Messaging API: Ermöglicht den Austausch von Nachrichten zwischen den Teilnehmern.
-
-      ```javascript
-      Edrys.sendMessage("subject", "body");
-
-      Edrys.onMessage(({from, subject, body}) => {
-        console.log(subject, body);
-      });
-      ```
-
-   2. Data API: Ermöglicht die Synchronisation von Daten zwischen den Teilnehmern.
-
-      ```javascript
-      const state = Edrys.getState("key", "Map");
-
-      // set two values in the map
-      state.set('option1', 12)
-      state.set('option2', [12 , 22, true])
-
-      // get the value of option1
-      console.log(state.get('option1')) // 12
-
-      // get the entire map
-      console.log(state.toJSON())
-      // Object { option1: 12, option2: [1, 2, 3] }
-      ```
-
-   3. Media API: Ermöglicht die Übertragung von Audio- und Videostreams zwischen den Teilnehmern.
-
-      ```javascript
-      Edrys.sendStream(stream);
-
-      Edrys.onStream((stream, settings) => {
-        videoElement.srcObject = stream;
-
-        // A function to apply video settings (only video/audio, rotate...)
-        applyVideoTransform(videoElement, settings);
-      });
-      ```
-
-   4. Local Storage: Ermöglicht das Speichern von Daten im Browser.
-
-      ```javascript
-      Edrys.setItem("key", "value");
-
-      Edrys.getItem("key") // value
-      ```
-
-5. Dokumentation als LiaScript:
-
-   https://github.com/edrys-labs/documentation
-
-   https://liascript.github.io/course/?https://raw.githubusercontent.com/edrys-labs/documentation/refs/heads/main/README.md
-
-6. Debugging von Stationen:
-
-   ![Screenshot der Debugging-Station](media/debug1.png)
-
-   ![Screenshot der Debugging-Station](media/debug2.png)
-
-7. Verbessertes UI:
-
-   - Module können direkt ausgewählt und integriert werden ohne Copy & Paste von URLs.
-   - Konfigurationsmenu, durch zusätzliche Metadaten.
-   - Module werden durch zugehörige Räume hervorgehoben.
-   - Mehr Konfigurationsmöglichkeite für Fenstergrößen
